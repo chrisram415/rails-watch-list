@@ -1,11 +1,16 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
-<%= @list.name %>
+<div class="container py-5">
 
-<%= link_to "return home", lists_index_path %>
+  <h1><%= @list.name %></h1>
+  <p>more info coming soon...</p>
 
-<%# the text int he button the path to ID we will dlete %>
+  <span><%= link_to "return home", lists_index_path,  class: "btn btn-dark d-inline p-2" %></span>
 
-<%= link_to "delete this list", list_path(@list),
-  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }
-  %>
+  <%# the text int he button the path to ID we will dlete %>
+  <%# <span class="d-block p-2 text-bg-primary">d-block</span>
+  <span class="d-block p-2 text-bg-dark">d-block</span> %>
+    <span> <%= link_to "delete this list", list_path(@list),
+      class: "btn btn-warning d-inline p-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }
+      %>
+    </span>
+    <!-- Content here -->
+</div>

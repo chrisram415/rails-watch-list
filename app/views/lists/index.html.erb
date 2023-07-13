@@ -1,11 +1,15 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list.id) %></li>
-  <% end %>
-</ul>
+<div class="container py-5">
+  <h2>Welcome<small class="text-body-secondary">
+    Choose a Movie list</small></h1>
 
-<%# link_to list.name, lists_path(list)  %>
-<%# link_to list.name, list_path(list.id) %>
-<%= link_to "Create a new lists", lists_new_path %>
+  <ul class="list-group list-group-flush">
+    <% @lists.each do |list| %>
+    <li class="list-group-item list-group-item-action"><%= link_to list.name, list_path(list.id), class:"text-decoration-none" %></li>
+    <% end %>
+  </ul>
+
+  <%# link_to list.name, lists_path(list)  %>
+  <%# link_to list.name, list_path(list.id) %>
+  <%= link_to "Create a new lists", lists_new_path, class: "btn btn-dark" %>
+  <!-- Content here -->
+</div>
